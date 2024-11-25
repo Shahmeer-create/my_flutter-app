@@ -1,0 +1,26 @@
+# Flutter/Dart related
+.dart_tool/
+.packages
+.pub-cache/
+build/
+ios/Flutter/.generated/
+android/.gradle/
+android/.idea/
+ios/.symlinks/
+ios/Pods/
+ios/Runner.xcworkspace/
+.idea/
+.vscode/
+
+# Mac related
+.DS_Store
+
+# Flutter IDEs
+.idea/
+.vscode/
+
+# Flutter package manager lock file
+pubspec.lock
+
+# Node.js
+node_modules/
