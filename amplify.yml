@@ -1,20 +1,23 @@
 version: 1
-backend:
-  phases:
-    build:
-      commands:
-        - echo "Backend build started"
-        - amplifyPush --simple
 frontend:
   phases:
-    build:
+    preBuild:
       commands:
-        - echo "Frontend build started"
-        - flutter build web
+        - echo "Installing Flutter SDK"
+        - git clone https://github.com/flutter/flutter.git -b stable  # Clone Flutter SDK (stable version)
+        - export PATH="$PATH:`pwd`/flutter/bin"  # Add Flutter to the PATH
+        - flutter --version  # Verify Flutter installation
+        
+        - flutter pub get  # Install Flutter dependencies
+        - flutter clean  # Clean any existing build artifacts
+        - flutter build web --release  # Build Flutter web app for release
+
   artifacts:
-    baseDirectory: build/web
+    baseDirectory: build/web  # Set the base directory for the web build output
     files:
-      - '**/*'
+      - '**/*'  # Include all files in the build/web directory
+
   cache:
     paths:
-      - node_modules/**/* 
+      - $HOME/.pub-cache  # Cache Flutter package dependencies
+      - .dart_tool/build  # Cache build artifacts to speed up builds
