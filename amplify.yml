@@ -1,0 +1,20 @@
+version: 1
+backend:
+  phases:
+    build:
+      commands:
+        - echo "Backend build started"
+        - amplifyPush --simple
+frontend:
+  phases:
+    build:
+      commands:
+        - echo "Frontend build started"
+        - flutter build web
+  artifacts:
+    baseDirectory: build/web
+    files:
+      - '**/*'
+  cache:
+    paths:
+      - node_modules/**/* 
