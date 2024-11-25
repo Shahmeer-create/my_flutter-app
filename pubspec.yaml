@@ -1,0 +1,29 @@
+name: my_flutter_app
+description: A new Flutter project with Amplify.
+publish_to: 'none' # Remove this line if you want to publish the package
+version: 1.0.0+1
+
+environment:
+  sdk: ">=3.0.0 <4.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  amplify_flutter: ^0.3.0
+  amplify_auth_cognito: ^0.3.0
+  amplify_datastore: ^0.3.0
+  amplify_api: ^0.3.0
+  flutter_localizations:
+    sdk: flutter
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^2.0.0
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/images/
+
+# This section defines the Flutter assets.
